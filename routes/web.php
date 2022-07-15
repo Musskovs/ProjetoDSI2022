@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'index')->name('home');
 
 // Usuarios
-Route::get('login', [UsuariosController::class, 'index'])->name('usuario.index');
-Route::post('login', [UsuariosController::class,'login'])->name('usuario.login');
-Route::get('logout', [UsuariosController::class,'logout'])->name('usuario.logout');
-Route::post('signin', [UsuariosController::class,'login'])->name('usuario.criar');
+Route::get('/user/login', [UsuariosController::class, 'index'])->name('usuario.index');
+Route::post('/user/login', [UsuariosController::class,'login'])->name('usuario.login');
+Route::get('/user/logout', [UsuariosController::class,'logout'])->name('usuario.logout');
+Route::get('/user/signup', [UsuariosController::class,'criar'])->name('usuario.criar');
+Route::post('/user/signup', [UsuariosController::class,'inserir'])->name('usuario.inserir');

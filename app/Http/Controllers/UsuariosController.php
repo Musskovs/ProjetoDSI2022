@@ -28,4 +28,27 @@ class UsuariosController extends Controller
             );
         }
     }
+
+    public function criar()
+    {
+        return view('usuarios.criar');
+    }
+
+    public function inserir(Request $form)
+    {
+        
+        $dados = $form->validate([
+            'nome' => 'required',
+            'papel' => 'required',
+            'escolaridade' => 'required',
+            'email' => 'required',
+            'senha' => 'required'
+        ]);
+        
+
+
+        Usuario::create($dados);
+        
+        return redirect()->route('home');
+    }
 }
