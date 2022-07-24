@@ -1,13 +1,15 @@
 @extends('templates.layout')
-@section('title', 'Criar Curso')
+@section('title', 'SignUp')
 @section('body')
 
 <div class="w-25 p-1">
 
     <h2 class="text-center">Cadastro de Curso</h2>
     <br />
-    <form action="{{ route('curso.inserir') }}" method="post">
+    <form action="{{ route('curso.inserir-review', $curso->id) }}" method="post">
         @csrf
+
+        {{-- USAR VALOR DA SESSÃO NO CONTROLER --}}
 
         <div class="form-outline mb-4">
             <input type="text" id="nome" name="nome" class="form-control" />

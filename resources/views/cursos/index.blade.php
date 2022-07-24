@@ -11,6 +11,7 @@
             <th scope="col">Instituição</th>
             <th scope="col">Modalidade</th>
             <th>Ver</th>
+            <th>Inserir review</th>
         </tr>
         
         @foreach($cursos as $curso)
@@ -20,6 +21,7 @@
                 <td>{{ $curso->instituicao }}</td>
                 <td>{{ $curso->modalidade }}</td>
                 <td><a href="{{route('curso.ver', $curso->id)}}" type="button" class="">Ver Reviews</a></td>
+                <td><a href="{{route('curso.review', $curso->id)}}" type="button" class="">Criar Review</a></td>
             </tr>
         @endforeach
 

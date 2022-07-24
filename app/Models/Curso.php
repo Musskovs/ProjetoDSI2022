@@ -12,4 +12,10 @@ class Curso extends Model
     protected $fillable = [
         'nome', 'tipo', 'instituicao', 'modalidade'
     ];
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'id_curso');
+    }
+
 }

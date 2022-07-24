@@ -12,4 +12,9 @@ class Usuario extends Model
     protected $fillable = [
         'nome', 'escolaridade', 'papel', 'email', 'senha'
     ];
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'id_usuario');
+    }
 }

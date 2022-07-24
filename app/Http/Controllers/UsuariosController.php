@@ -17,7 +17,9 @@ class UsuariosController extends Controller
     {
         $email = $form->email;
         $senha = $form->password;
+
         $usuario = Usuario::select('id', 'nome', 'email', 'papel')->where('email', $email)->where('senha', $senha)->get();
+        
         if ($usuario->count()) {
             $form->session()->put('usuario', $usuario[0]);
             return redirect()->route('home');
