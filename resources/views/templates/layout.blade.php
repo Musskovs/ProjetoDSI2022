@@ -20,8 +20,8 @@
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="{{ route('home') }}" class="nav-link px-2 text-white">Home</a></li>
+                    <li><a href="{{ route('curso.index') }}" class="nav-link px-2 text-white">Cursos</a></li>
                     <li><a href="#" class="nav-link px-2 text-white">Instituições</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Cursos</a></li>
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -30,8 +30,8 @@
 
                 <div class="text-end">
                     @if (session('usuario'))
-                        <p class="nav-link px-2 text-white"> Olá, {{ session('usuario.nome') }}!<p>
-                        <a href="{{ route('usuario.logout') }}" type="button" class="btn btn-outline-light me-2">Logout</a>
+                        <a type="button" class="btn btn-outline-light me-2"> {{ session('usuario.nome') }}<a>
+                        <a href="{{ route('usuario.logout') }}" type="button" class="btn btn-outline-danger me-2">Logout</a>
                     @else
                         <a href="{{ route('usuario.index') }}" type="button" class="btn btn-outline-light me-2">Login</a>
                         <a href="{{ route('usuario.criar') }}" type="button" class="btn btn-warning">Sign-up</a>

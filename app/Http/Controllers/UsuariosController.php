@@ -16,7 +16,7 @@ class UsuariosController extends Controller
     public function login(Request $form)
     {
         $email = $form->email;
-        $senha = $form->senha;
+        $senha = $form->password;
         $usuario = Usuario::select('id', 'nome', 'email', 'papel')->where('email', $email)->where('senha', $senha)->get();
         if ($usuario->count()) {
             $form->session()->put('usuario', $usuario[0]);
@@ -36,19 +36,21 @@ class UsuariosController extends Controller
 
     public function inserir(Request $form)
     {
-        
         $dados = $form->validate([
             'nome' => 'required',
             'papel' => 'required',
             'escolaridade' => 'required',
             'email' => 'required',
-            'senha' => 'required'
+            'senha' => 'required',
         ]);
-        
-
 
         Usuario::create($dados);
         
+        return redirect()->route('home');
+    }
+
+    public function logout(){
+        session()->forget('usuario');
         return redirect()->route('home');
     }
 }

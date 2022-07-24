@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CursosController;
 use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,9 @@ Route::post('/user/login', [UsuariosController::class,'login'])->name('usuario.l
 Route::get('/user/logout', [UsuariosController::class,'logout'])->name('usuario.logout');
 Route::get('/user/signup', [UsuariosController::class,'criar'])->name('usuario.criar');
 Route::post('/user/signup', [UsuariosController::class,'inserir'])->name('usuario.inserir');
+
+// Cursos
+Route::get('/cursos', [CursosController::class,'index'])->name('curso.index');
+Route::get('/cursos/criar', [CursosController::class,'criar'])->name('curso.criar');
+Route::post('/cursos/criar', [CursosController::class,'inserir'])->name('curso.inserir');
+Route::get('/cursos/ver', [CursosController::class,'ver'])->name('curso.ver');
