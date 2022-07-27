@@ -21,7 +21,7 @@
                 <td>{{ $curso->instituicao }}</td>
                 <td>{{ $curso->modalidade }}</td>
                 <td><a href="{{route('curso.ver', $curso->id)}}" type="button" class="">Ver Reviews</a></td>
-                <td><a href="{{route('curso.review', $curso->id)}}" type="button" class="">Criar Review</a></td>
+                <td><a href="{{route('review.criar', $curso->id)}}" type="button" class="">Criar Review</a></td>
             </tr>
         @endforeach
 

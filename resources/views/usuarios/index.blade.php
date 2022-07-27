@@ -1,5 +1,5 @@
 @extends('templates.layout')
-@section('title', 'Login')
+@section('titulo', 'Login')
 @section('body')
 
 @if (session('error'))

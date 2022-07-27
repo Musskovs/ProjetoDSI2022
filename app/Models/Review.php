@@ -13,11 +13,11 @@ class Review extends Model
 
     public function usuario()
     {
-        return $this->belongsTo(Usuario::class);
+        return $this->belongsTo(Usuario::class, 'id_usuario', 'id');
     }
 
     public function curso()
     {
-        return $this->belongsTo(Curso::class);
+        return $this->belongsTo(Curso::class, 'id_curso', 'id');
     }
 }

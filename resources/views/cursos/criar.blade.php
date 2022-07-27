@@ -1,5 +1,5 @@
 @extends('templates.layout')
-@section('title', 'Criar Curso')
+@section('titulo', 'Criar Curso')
 @section('body')
 
 <div class="w-25 p-1">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CursosController;
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\ReviewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,5 +30,7 @@ Route::get('/cursos', [CursosController::class,'index'])->name('curso.index');
 Route::get('/cursos/criar', [CursosController::class,'criar'])->name('curso.criar');
 Route::post('/cursos/criar', [CursosController::class,'inserir'])->name('curso.inserir');
 Route::get('/cursos/ver/{id}', [CursosController::class,'ver'])->name('curso.ver');
-Route::get('/cursos/review/{id}', [CursosController::class,'review'])->name('curso.review');
-Route::get('/cursos/review/{id}', [CursosController::class,'inserir-review'])->name('curso.inserir-review');
+
+// Reviews
+Route::get('/reviews/{idcurso}', [ReviewsController::class,'criar'])->name('review.criar');
+Route::post('/reviews/{idcurso}', [ReviewsController::class,'inserir'])->name('review.inserir');

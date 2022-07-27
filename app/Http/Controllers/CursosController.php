@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Curso;
-use App\Models\Review;
 use Illuminate\Http\Request;
 
 class CursosController extends Controller
@@ -18,11 +17,10 @@ class CursosController extends Controller
 
     public function ver(Curso $id)
     {
-        //$curso = Curso::find($id);
-        //$reviews = Review::where('id_curso', $id);
-        $cursos = Curso::with(["reviews", "reviews.usuario"])->find($id);
+        $curso = Curso::with(["reviews", "reviews.usuario"])->find($id);
+        //dd($curso);
         return view('cursos/ver', [
-            'cursos' => $cursos,
+            'curso' => $curso,
         ]);
     }
 
@@ -46,10 +44,4 @@ class CursosController extends Controller
         return redirect()->route('home');
     }
 
-    public function review(Curso $id)
-    {
-        return view('cursos/review', [
-            'curso' => $id,
-        ]);
-    }
 }

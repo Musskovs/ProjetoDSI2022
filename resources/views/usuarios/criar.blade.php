@@ -1,5 +1,5 @@
 @extends('templates.layout')
-@section('title', 'SignUp')
+@section('titulo', 'SignUp')
 @section('body')
 
 <div class="w-25 p-1">
