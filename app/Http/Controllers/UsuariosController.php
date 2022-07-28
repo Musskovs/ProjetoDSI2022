@@ -22,6 +22,7 @@ class UsuariosController extends Controller
         
         if ($usuario->count()) {
             $form->session()->put('usuario', $usuario[0]);
+            $form->session()->put('papelusuario', $usuario[0]->papel);
             return redirect()->route('home');
         } else {
             return redirect()->route('usuario.index')->with(

@@ -9,7 +9,7 @@ class CursosController extends Controller
 {
     public function index()
     {
-        $cursos = Curso::all();
+        $cursos = Curso::withAvg('reviews', 'nota')->get();
         return view('cursos/index', [
             'cursos' => $cursos,
         ]);
@@ -18,7 +18,7 @@ class CursosController extends Controller
     public function ver(Curso $id)
     {
         $curso = Curso::with(["reviews", "reviews.usuario"])->find($id);
-        //dd($curso);
+        
         return view('cursos/ver', [
             'curso' => $curso,
         ]);

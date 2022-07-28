@@ -1,7 +1,16 @@
 @extends('templates.layout')
-@section('titulo', 'Home')
+@section('titulo', 'Homepage')
 @section('body')
 
-<h1>Home</h1>
+<div>
+    <h2 class="text-center">Review de Cursos</h2>
+
+    <p class="text-center">
+        Com a popularização do EAD e a explosão de criação dos cursos online, fica cada vez mais difícil
+        saber a qualidade de um determinado curso. <br/> 
+        Nosso produto permite estudantes a encontrarem as melhores opções em educação, seja online,
+        presencial ou híbrida.
+    </p>
+</div>
 
 @endsection

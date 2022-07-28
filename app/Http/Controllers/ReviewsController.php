@@ -10,9 +10,12 @@ class ReviewsController extends Controller
 {
     public function criar(Curso $idcurso)
     {
-        return view('reviews/criar', [
-            'curso' => $idcurso,
-        ]);
+        if (session('usuario'))
+            return view('reviews/criar', [
+                'curso' => $idcurso,
+            ]);
+        else
+            return redirect()->route('usuario.login');
     }
 
     public function inserir(request $form, $idcurso)
@@ -32,9 +35,7 @@ class ReviewsController extends Controller
         $review->descricao = $dados['descricao'];
         $review->save();
 
-        //Review::create($dados);
-        
         return redirect()->route('curso.ver', $idcurso);
-        
     }
+
 }

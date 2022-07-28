@@ -2,19 +2,20 @@
 @section('titulo', 'Criar Curso')
 @section('body')
 
-<div class="w-25 p-1">
+<div class="d-flex align-items-center justify-content-center">
 
-    <h2 class="text-center">Cadastro de Curso</h2>
-    <br />
     <form action="{{ route('curso.inserir') }}" method="post">
         @csrf
+
+        <h2 class="text-center">Cadastro de Curso</h2>
+        <br />
 
         <div class="form-outline mb-4">
             <input type="text" id="nome" name="nome" class="form-control" />
             <label class="form-label" for="nome">Nome</label>
         </div>
 
-         <div class="form-outline mb-4">
+        <div class="form-outline mb-4">
             <input type="text" id="instituicao" name="instituicao" class="form-control" />
             <label class="form-label" for="instituicao">Instituição de Ensino</label>
         </div>

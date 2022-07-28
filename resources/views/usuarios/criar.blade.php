@@ -2,12 +2,13 @@
 @section('titulo', 'SignUp')
 @section('body')
 
-<div class="w-25 p-1">
+<div class="d-flex align-items-center justify-content-center">
 
-    <h2 class="text-center">Cadastro de Usuário</h2>
-    <br />
     <form action="{{ route('usuario.inserir') }}" method="post">
         @csrf
+
+        <h2 class="text-center">Cadastro de Usuário</h2>
+        <br />
 
         <div class="form-outline mb-4">
             <input type="text" id="nome" name="nome" class="form-control" />
@@ -34,7 +35,7 @@
             <label class="form-label" for="senha">Senha</label>
         </div>
 
-        <input type="submit" class="btn btn-primary btn-block mb-4" value="Cadastrar"/>
+        <input type="submit" class="btn btn-primary btn-block mb-4" value="Cadastrar" />
     </form>
 </div>
 @endsection
